@@ -17,15 +17,13 @@ class Test_minhavisao(BaseTest):
             - Pesquisar tarefa com código inválido (test_pesquisa_invalida)
     """
 
-    """
+
     def test_pesquisar_tarefa_valida(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login_tarefas(TestData.USER_NAME, TestData.PASSWORD)
         num_tarefa = homePage.confirmar_numero_tarefa()
         homePage.pesquisar_tarefa(num_tarefa)
-        # homePage.do_enter(MinhaVisao.CAMPO_PESQUISAR_TAREFA)
         teste = homePage.verifica_tarefa_aberta()
-        # titulo = homePage.get_title(TestData.TITULO_VER_TAREFAS)
         assert num_tarefa == teste
 
     def test_visualizar_tarefas(self):
@@ -59,4 +57,3 @@ class Test_minhavisao(BaseTest):
         homePage.do_enter(MinhaVisao.CAMPO_PESQUISAR_TAREFA)
         homePage.verifica_erro_pesquisa()
         assert homePage
-"""
